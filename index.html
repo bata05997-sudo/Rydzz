@@ -1,0 +1,310 @@
+Halaman Pembayaran Modern dengan Tema Hitam
+
+Berikut adalah kode HTML dan CSS untuk halaman pembayaran yang stylish dengan tema hitam:
+
+```html
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PAYMNET BY ABANG RYDZZ</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #0c0c0c 0%, #1a1a1a 100%);
+            color: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 500px;
+            background: #121212;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+            border: 1px solid #333;
+        }
+        
+        .header {
+            background: #000;
+            padding: 25px 20px;
+            text-align: center;
+            border-bottom: 1px solid #333;
+        }
+        
+        .header h1 {
+            font-size: 24px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            background: linear-gradient(90deg, #ff6b00, #ffa500);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .payment-methods {
+            padding: 25px 20px;
+        }
+        
+        .payment-title {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: #ddd;
+            text-align: center;
+        }
+        
+        .payment-card {
+            background: #1a1a1a;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 1px solid #333;
+            transition: all 0.3s ease;
+        }
+        
+        .payment-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(255, 165, 0, 0.2);
+            border-color: #ffa500;
+        }
+        
+        .payment-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .payment-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        
+        .dana-icon {
+            background: linear-gradient(135deg, #00a3ff, #0080ff);
+        }
+        
+        .gopay-icon {
+            background: linear-gradient(135deg, #00aa13, #008a10);
+        }
+        
+        .payment-name {
+            font-size: 18px;
+            font-weight: 600;
+        }
+        
+        .payment-details {
+            margin-top: 10px;
+        }
+        
+        .payment-number {
+            font-size: 16px;
+            font-weight: 600;
+            color: #ffa500;
+            margin-bottom: 5px;
+        }
+        
+        .payment-account {
+            font-size: 14px;
+            color: #aaa;
+        }
+        
+        .copy-btn {
+            background: #333;
+            color: #fff;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-top: 10px;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+        
+        .copy-btn:hover {
+            background: #ffa500;
+            color: #000;
+        }
+        
+        .channel-section {
+            padding: 20px;
+            background: #1a1a1a;
+            margin: 20px;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid #333;
+        }
+        
+        .channel-title {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: #ddd;
+        }
+        
+        .channel-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #25d366, #128c7e);
+            color: white;
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3);
+        }
+        
+        .channel-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(37, 211, 102, 0.4);
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: #777;
+            font-size: 14px;
+            border-top: 1px solid #333;
+        }
+        
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #25d366;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transform: translateX(150%);
+            transition: transform 0.3s ease;
+            z-index: 1000;
+        }
+        
+        .notification.show {
+            transform: translateX(0);
+        }
+        
+        @media (max-width: 480px) {
+            .container {
+                border-radius: 12px;
+            }
+            
+            .header h1 {
+                font-size: 20px;
+            }
+            
+            .payment-card {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>PAYMENT GATEWAY</h1>
+        </div>
+        
+        <div class="payment-methods">
+            <h2 class="payment-title">Pilih Metode Pembayaran</h2>
+            
+            <div class="payment-card">
+                <div class="payment-header">
+                    <div class="payment-icon dana-icon">D</div>
+                    <div class="payment-name">DANA</div>
+                </div>
+                <div class="payment-details">
+                    <div class="payment-number">082143392675</div>
+                    <div class="payment-account">A/N: S******/A**</div>
+                    <button class="copy-btn" data-number="082143392675">Salin Nomor</button>
+                </div>
+            </div>
+            
+            <div class="payment-card">
+                <div class="payment-header">
+                    <div class="payment-icon gopay-icon">G</div>
+                    <div class="payment-name">GOPAY</div>
+                </div>
+                <div class="payment-details">
+                    <div class="payment-number">082144392675</div>
+                    <div class="payment-account">A/N: RYDZZ R***</div>
+                    <button class="copy-btn" data-number="082144392675">Salin Nomor</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="channel-section">
+            <h3 class="channel-title">Saluran Informasi</h3>
+            <a href="https://whatsapp.com/channel/0029Vb6ZkjODp2QCUWDyGP2E" target="_blank" class="channel-btn">
+                WhatsApp Channel
+            </a>
+        </div>
+        
+        <div class="footer">
+            <p>Setelah melakukan pembayaran, harap konfirmasi melalui WhatsApp</p>
+        </div>
+    </div>
+    
+    <div class="notification" id="notification">
+        Nomor berhasil disalin!
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const copyButtons = document.querySelectorAll('.copy-btn');
+            const notification = document.getElementById('notification');
+            
+            copyButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const number = this.getAttribute('data-number');
+                    
+                    // Copy to clipboard
+                    navigator.clipboard.writeText(number).then(() => {
+                        // Show notification
+                        notification.classList.add('show');
+                        
+                        // Hide notification after 3 seconds
+                        setTimeout(() => {
+                            notification.classList.remove('show');
+                        }, 3000);
+                    }).catch(err => {
+                        console.error('Gagal menyalin teks: ', err);
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+```
+
+Fitur-fitur yang disertakan:
+
+1. Desain modern dengan tema hitam yang elegan
+2. Kartu pembayaran untuk DANA dan GOPAY dengan informasi lengkap
+3. Tombol salin nomor yang berfungsi dengan notifikasi
+4. Tombol WhatsApp Channel dengan efek hover yang menarik
+5. Responsif untuk semua ukuran layar
+6. Animasi dan transisi yang halus
+7. Gradien warna yang menambah kesan premium
+
+Anda dapat langsung menggunakan kode ini dengan menyalin dan menjalankannya di browser. Semua informasi pembayaran dan saluran WhatsApp sudah disertakan sesuai permintaan.
